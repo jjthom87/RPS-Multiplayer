@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RPS-Multiplayer</title>
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+</head>
+<body>
+	<header>Rock Paper Scissors</header>
+		<div class  = "row" id = "rowOne">
+			<input type="text" id ="nameInput" placeholder="Enter Name"><input type = "submit" id = "enterPlayer">
+		</div>
+		<div class = "row" id = "rowTwo">
+			<div class = "col-md-4">
+				<div id = "boxOne">
+					<h1 id = "playerName">Waiting for Player One</h1>
+				</div>
+			</div>
+			<div class = "col-md-4">
+				<div id = "boxTwo">
+				</div>
+			</div>
+			<div class = "col-md-4 ">
+				<div id = "boxThree">
+					<h1 id = "guestName">Waiting for Player Two</h2>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
