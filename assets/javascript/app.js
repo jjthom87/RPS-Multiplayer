@@ -1,14 +1,15 @@
+  $(document).ready(function() {
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDRtZRXC1efUX4HKuEveXAQ8VfZuZv1AyM",
     authDomain: "rock-paper-scissors-3ef59.firebaseapp.com",
     databaseURL: "https://rock-paper-scissors-3ef59.firebaseio.com",
-    storageBucket: "",
+    storageBucket: "rock-paper-scissors-3ef59.appspot.com",
   };
 
   firebase.initializeApp(config);
 
-  var dbRef = firebase.database().ref();//created a variable to reference the database
+  var dbRef = firebase.database().ref()//created a variable to reference the database
   console.log("DbRef is " + dbRef);
 
   //initial values
@@ -31,16 +32,17 @@ Wins: 0,
 Losses: 0
 });
 
-  $('#enterPlayer').on('click', function() {
+  $('#playerEnter').on('click', function() {
 
   	$('#playerName').hide();
+
   	
-  	playerEnter = $('#nameInput').val().trim();
+  	var playerEnter = $('#nameInput').val();
   	console.log("Player Enter Reads: " + playerEnter);
 
-		  dbRef.push({
+		  dbRef.set({
 		  	name: playerEnter
-		  })
+		  });
 
 	});
 
@@ -48,8 +50,9 @@ Losses: 0
   		console.log("Snapshot.val() is " + snapshot.val());
   		console.log("Snapshot.val() name is " + snapshot.val().name);
   		
-  		$('#boxOne').html(snapshot.val().name);
+  		$('#boxOne').text(snapshot.val().name);
 
   }, function(errorObject){
-  		console.log("Errors Handled: " + errorObject.code);
+  		console.log("Errors Handled: " + errorObject.code)
   });
+});
